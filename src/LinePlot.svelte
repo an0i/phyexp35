@@ -20,12 +20,12 @@
   $: y3 = d3.scaleLinear(d3.extent(u3), [sectionHeight * 3 + gap * 3, sectionHeight * 2 + gap * 3]);
 
   let gx1, gx2, gx3, gy1, gy2, gy3;
-  $: console.log(d3.axisBottom(x));
-  $: d3.axisBottom(x);
-  $: d3.axisBottom(x);
-  $: d3.axisLeft(y1);
-  $: d3.axisLeft(y3);
-  $: d3.axisLeft(y2);
+  $: d3.select(gx1).call(d3.axisBottom(x));
+  $: d3.select(gx2).call(d3.axisBottom(x));
+  $: d3.select(gx3).call(d3.axisBottom(x));
+  $: d3.select(gy1).call(d3.axisLeft(y1));
+  $: d3.select(gy2).call(d3.axisLeft(y2));
+  $: d3.select(gy3).call(d3.axisLeft(y3));
 
   /**
    * @param {number[]} xArray
